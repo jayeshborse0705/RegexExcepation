@@ -30,6 +30,12 @@ namespace RegexExpection
             Console.WriteLine("Enter the Mobile Number");
             var mobileNum = Console.ReadLine();
             validation.Mobile(mobileNum);
+
+            //uc5 : Password
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Enter the Password");
+            var Password = Console.ReadLine();
+            validation.Validate_PassWord(Password);
         }
     }
 }
