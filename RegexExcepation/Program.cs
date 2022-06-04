@@ -36,6 +36,12 @@ namespace RegexExpection
             Console.WriteLine("Enter the Password");
             var Password = Console.ReadLine();
             validation.Validate_PassWord(Password);
+
+            //uc6 : Password is  minimum one upper case letter
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Enter the Password with minimum one upper case: ");
+            var Password2 = Console.ReadLine();
+            validation.Validate_PassWord(Password2);
         }
     }
 }
