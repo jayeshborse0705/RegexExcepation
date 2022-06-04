@@ -31,5 +31,25 @@ namespace RegexExcepation
                 throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.FIRSTNAME_INVALID, "First Name is invalid");
             }
         }
+        public string Last_Name(string lastName)
+        {
+            try
+            {
+                Regex regex = new Regex(LastName);
+                if (regex.IsMatch(lastName))
+                {
+                    Console.WriteLine("Lastname is valid :" + lastName);
+                    return lastName;
+                }
+                else
+                {
+                    throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.LASTNAME_INVALID, "Last Name is invalid");
+                }
+            }
+            catch
+            {
+                throw new RegexCustomExpection(RegexCustomExpection.Exceptiontype.LASTNAME_INVALID, "Last Name is invalid");
+            }
+        }
     }
 }

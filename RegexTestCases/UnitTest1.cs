@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using RegexExcepation;
 using RegexExpection;
 
 namespace RegexTestCases
@@ -17,10 +18,7 @@ namespace RegexTestCases
         [Test]
         public void Comparing_the_First_Name_of_User()
         {
-
-
-            {
-                //Arrange
+          //Arrange
                 string firstName = "jayesh";
                 string expected = "First Name is invalid";
                 try
@@ -33,6 +31,27 @@ namespace RegexTestCases
                     //Assert
                     Assert.AreEqual(expected, expection.Message);
                 }
+            
+        }
+        //<summary>
+        //uc2 : Comparing the last name of user
+        //</summary>
+        [Test]
+        public void Comparing_the_Last_Name_of_User()
+        {
+            //Arrange
+            string lastName = "borase";
+            string expected = "Last Name is invalid";
+            try
+            {
+                //Act
+                validation = new Validation();
+                validation.Last_Name(lastName);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
             }
         }
     }
