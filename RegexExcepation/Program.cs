@@ -24,6 +24,12 @@ namespace RegexExpection
             Console.WriteLine("Enter the Email Id");
             var email_Id = Console.ReadLine();
             validation.EmailId(email_Id);
+
+            //uc4 : Mobile Number
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Enter the Mobile Number");
+            var mobileNum = Console.ReadLine();
+            validation.Mobile(mobileNum);
         }
     }
 }
