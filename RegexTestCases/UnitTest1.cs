@@ -1,13 +1,17 @@
 using NUnit.Framework;
 using RegexExcepation;
 using RegexExpection;
+using System;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
 
 namespace RegexTestCases
 {
     public class Tests
     {
         Validation validation;
-        [SetUp]
+
+     [SetUp]
         public void Setup()
         {
             validation = new Validation();
@@ -54,5 +58,27 @@ namespace RegexTestCases
                 Assert.AreEqual(expected, expection.Message);
             }
         }
+        //<summary>
+        //uc3 : Comparing the EmailId of user
+        //</summary>
+        [Test]
+        public void Comparing_the_EmailId_of_User()
+        {
+            //Arrange
+            string Email_Id = "jayshborase";
+            string expected = "Email is invalid";
+            try
+            {
+                //Act
+                validation = new Validation();
+                validation.EmailId(Email_Id);
+            }
+            catch (RegexCustomExpection expection)
+            {
+                //Assert
+                Assert.AreEqual(expected, expection.Message);
+            }
+        }
+
     }
 }
